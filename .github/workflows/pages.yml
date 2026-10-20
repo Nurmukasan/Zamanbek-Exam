@@ -21,8 +21,17 @@ jobs:
         uses: actions/checkout@v4
       - name: Check JavaScript
         run: node --check script.js
+      - name: Prepare static files
+        run: |
+          mkdir -p /tmp/forma-site
+          cp index.html styles.css script.js .nojekyll /tmp/forma-site/
+          cp -R assets /tmp/forma-site/
       - name: Update publishing branch
-        run: git push origin HEAD:refs/heads/gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: /tmp/forma-site
       # Token-authenticated pushes do not trigger a Pages build by themselves.
       - name: Request Pages build
         env:

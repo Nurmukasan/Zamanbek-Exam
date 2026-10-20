@@ -30,7 +30,7 @@ python3 -m http.server 8000 --bind 0.0.0.0
 
 В **Settings → Pages → Build and deployment** выбран источник **Deploy from a branch → gh-pages → / (root)**. Workflow `.github/workflows/pages.yml` синхронизирует новые изменения из `main` в `gh-pages`, запрашивает сборку и проверяет опубликованный HTML. Поэтому изменения в `main` публикуются автоматически. HTML, стили и скрипты используют относительные пути и корректно работают в подпапке репозитория.
 
-Для ручной публикации без workflow можно выполнить `git push origin main:gh-pages`. Обычная отправка из локального Git запускает стандартную сборку GitHub Pages. Не изменяйте ветку `gh-pages` отдельно от `main`, чтобы ветки не расходились. Статус сборки доступен во вкладке **Actions**, адрес — в **Settings → Pages**.
+Ветка `gh-pages` содержит только готовые файлы сайта; исходники и workflow находятся в `main`. Статус сборки доступен во вкладке **Actions**, адрес — в **Settings → Pages**. Для повторной публикации текущего `main` откройте **Actions → Publish website to GitHub Pages → Run workflow**.
 
 ## Как устроен сайт
 
