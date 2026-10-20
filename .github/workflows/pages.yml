@@ -6,39 +6,38 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
-  id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set publishing source to GitHub Actions
+      - name: Check JavaScript
+        run: node --check script.js
+      - name: Update publishing branch
+        run: git push origin HEAD:refs/heads/gh-pages
+      # Token-authenticated pushes do not trigger a Pages build by themselves.
+      - name: Request Pages build
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow > /dev/null
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-      - name: Upload static website
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
-      - name: Check published website
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds" > /dev/null
+      - name: Verify the published page matches this version
         env:
-          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+          SITE_URL: https://nurmukasan.github.io/Zamanbek-Exam/
         run: |
-          curl --fail --silent --show-error --retry 6 --retry-all-errors --retry-delay 10 "$SITE_URL" --output /tmp/published.html
-          python3 -c 'from pathlib import Path; p=Path("/tmp/published.html").read_text(); assert "FORMA" in p and "request-form" in p, "Published page does not contain the expected website"'
+          for attempt in $(seq 1 24); do
+            if curl --fail --silent --show-error "$SITE_URL" --output /tmp/published.html && cmp --silent index.html /tmp/published.html; then
+              echo "Published website verified: $SITE_URL"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "The published page did not match the expected version within four minutes."
+          exit 1

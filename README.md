@@ -24,19 +24,13 @@ python3 -m http.server 8000 --bind 0.0.0.0
 
 ## Публикация на GitHub Pages
 
-В репозитории уже есть workflow `.github/workflows/pages.yml`. В GitHub откройте:
-
-1. **Settings → Pages → Build and deployment**.
-2. В **Source** выберите **GitHub Actions**.
-3. Откройте **Actions → Publish website to GitHub Pages → Run workflow → main**.
-
-После успешного выполнения адрес сайта:
+Сайт публикуется из ветки `gh-pages`. Адрес:
 
 **https://nurmukasan.github.io/Zamanbek-Exam/**
 
-Следующие изменения в `main` публикуются автоматически. HTML, стили и скрипты используют относительные пути и корректно работают в подпапке репозитория.
+В **Settings → Pages → Build and deployment** выбран источник **Deploy from a branch → gh-pages → / (root)**. Workflow `.github/workflows/pages.yml` синхронизирует новые изменения из `main` в `gh-pages`, запрашивает сборку и проверяет опубликованный HTML. Поэтому изменения в `main` публикуются автоматически. HTML, стили и скрипты используют относительные пути и корректно работают в подпапке репозитория.
 
-Если в репозитории также есть ветка `gh-pages`, альтернативный вариант: выбрать **Deploy from a branch → gh-pages → / (root) → Save**. Выберите один способ публикации. При публикации из ветки обновляйте её вместе с `main`.
+Для ручной публикации без workflow можно выполнить `git push origin main:gh-pages`. Обычная отправка из локального Git запускает стандартную сборку GitHub Pages. Не изменяйте ветку `gh-pages` отдельно от `main`, чтобы ветки не расходились. Статус сборки доступен во вкладке **Actions**, адрес — в **Settings → Pages**.
 
 ## Как устроен сайт
 
