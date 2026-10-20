@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f4ee">
+  <meta name="description" content="FORMA — концепция архитектурного бюро. Архитектура, интерьеры и пространства, в которых хочется жить.">
+  <title>FORMA — пространство для жизни</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/images/villa.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержимому</a>
+  <header class="header" id="top">
+    <a class="logo" href="#top" aria-label="FORMA — на главную">f<span class="logo-o">o</span>rma<span class="registered">®</span></a>
+    <nav class="desktop-nav" aria-label="Главная навигация">
+      <a href="#projects">Проекты</a><a href="#about">О бюро</a><a href="#services">Услуги</a><a href="#process">Подход</a>
+    </nav>
+    <a class="button button-small header-cta" href="#contact">Обсудить проект <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+    <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" inert hidden>
+      <a href="#projects">Проекты <span>01</span></a><a href="#about">О бюро <span>02</span></a><a href="#services">Услуги <span>03</span></a><a href="#process">Подход <span>04</span></a><a href="#contact">Обсудить проект <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-pad" aria-labelledby="hero-heading">
+      <div class="eyebrow hero-eyebrow"><span class="status-dot"></span> АРХИТЕКТУРА С ЧЕЛОВЕЧЕСКИМ ЛИЦОМ <span class="hero-location">АЛМАТЫ · КАЗАХСТАН</span></div>
+      <div class="hero-heading-row">
+        <h1 id="hero-heading">Жизнь обретает<br>новую <span class="serif-word">форму.</span><span class="heading-period"></span></h1>
+        <div class="hero-intro"><p>Создаём продуманные пространства,<br>которые становятся частью вас.</p><a class="text-link" href="#projects">Исследовать проекты <span aria-hidden="true"><svg class="icon icon-down-left" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></div>
+      </div>
+      <div class="hero-image-wrap">
+        <img class="hero-image" src="./assets/images/villa.webp" alt="Современная вилла из светлого камня с панорамными окнами и отражающим бассейном среди зелёных холмов" width="1536" height="1024" fetchpriority="high">
+        <div class="image-shade"></div>
+        <div class="hero-image-caption"><span class="mini-label">ИЗБРАННЫЙ КОНЦЕПТ / 2026</span><strong>Дом, который дышит</strong><span>Частная резиденция · Предгорья Алматы</span></div>
+        <a class="round-link hero-round" href="#projects" aria-label="Смотреть проекты"><span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a>
+        <div class="image-coordinate" aria-hidden="true">43°14′ N &nbsp; 76°53′ E</div>
+      </div>
+      <div class="hero-bottom"><span>АРХИТЕКТУРА &nbsp; / &nbsp; ИНТЕРЬЕРЫ &nbsp; / &nbsp; СРЕДА</span><a href="#about">Листайте, чтобы познакомиться <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="about section-pad section-space" id="about" aria-labelledby="about-heading">
+      <div class="section-kicker reveal"><span class="status-dot"></span> 01 / ФИЛОСОФИЯ</div>
+      <div class="about-content reveal"><h2 id="about-heading">Не просто стены.<br><span class="muted">Место, где происходит</span><br>ваша жизнь.</h2><div class="about-details"><p>Мы верим, что хорошая архитектура начинается с внимания. К свету в утреннем окне. К фактуре дерева. К вашим привычкам и любимым вещам.</p><p>FORMA соединяет ясную эстетику, природные материалы и точную работу с пространством. Чтобы каждый метр был не только красивым, но и вашим.</p></div><div class="principles"><div><span>01</span><strong>Человек в центре</strong><p>Сначала ваш образ жизни.<br>Потом — чертежи.</p></div><div><span>02</span><strong>Честные материалы</strong><p>Камень, дерево и свет.<br>Красота, которая надолго.</p></div><div><span>03</span><strong>Целостный подход</strong><p>От первой идеи<br>до последней детали.</p></div></div></div>
+    </section>
+
+    <section class="projects section-pad section-space" id="projects" aria-labelledby="projects-heading">
+      <div class="section-top reveal"><div><div class="section-kicker">02 / ПОРТФОЛИО</div><h2 id="projects-heading">Меньше слов.<br>Больше пространства.</h2></div><p class="section-aside">Каждый проект — новая история.<br>Вот несколько, с которых стоит начать.</p></div>
+      <div class="project-filters reveal" role="group" aria-label="Фильтр проектов"><button class="filter active" type="button" data-filter="all" aria-pressed="true">Все проекты <span>03</span></button><button class="filter" type="button" data-filter="architecture" aria-pressed="false">Архитектура</button><button class="filter" type="button" data-filter="interior" aria-pressed="false">Интерьеры</button></div>
+      <div class="project-grid">
+        <button class="project-card project-wide reveal" type="button" data-category="architecture" data-project="villa" aria-label="Открыть проект Тихая резиденция"><div class="project-image"><img src="./assets/images/villa.webp" alt="Светлая каменная резиденция среди холмов" width="1536" height="1024" loading="lazy"><span class="project-tag">АРХИТЕКТУРА</span><span class="project-open" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></div><div class="project-info"><h3>Тихая резиденция</h3><span>Алматы · 320 м² · 2026</span></div></button>
+        <button class="project-card reveal" type="button" data-category="interior" data-project="interior" aria-label="Открыть проект Тёплый минимализм"><div class="project-image"><img src="./assets/images/interior.webp" alt="Светлая гостиная с тёплым деревом, низким диваном и мягким дневным светом" width="1536" height="1024" loading="lazy"><span class="project-tag">ИНТЕРЬЕР</span><span class="project-open" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></div><div class="project-info"><h3>Тёплый минимализм</h3><span>Астана · 140 м² · 2026</span></div></button>
+        <button class="project-card reveal" type="button" data-category="architecture" data-project="retreat" aria-label="Открыть проект Ближе к природе"><div class="project-image"><img src="./assets/images/retreat.webp" alt="Лаконичный загородный дом в окружении хвойных деревьев" width="1536" height="1024" loading="lazy"><span class="project-tag">АРХИТЕКТУРА</span><span class="project-open" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></div><div class="project-info"><h3>Ближе к природе</h3><span>Бурабай · 210 м² · 2026</span></div></button>
+      </div>
+      <p class="portfolio-note">Представлены концептуальные проекты вымышленного бюро.</p>
+    </section>
+
+    <section class="services section-pad section-space" id="services" aria-labelledby="services-heading">
+      <div class="services-intro reveal"><div class="section-kicker">03 / ЧТО МЫ ДЕЛАЕМ</div><h2 id="services-heading">Ваша идея.<br>Наша точность.</h2><p>Включаемся на любом этапе.<br>И видим картину целиком.</p><a href="#contact" class="text-link">Найти своё решение <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a><div class="architecture-mark" aria-hidden="true"><span></span><span></span><span></span></div></div>
+      <div class="service-list reveal">
+        <details class="service" open><summary><span class="service-number">01</span><h3>Архитектура</h3><span class="service-plus" aria-hidden="true"></span></summary><div class="service-body"><p>Дома, которые чувствуют место. Продумываем объём, планировку и связь с ландшафтом — от первого эскиза до рабочей документации.</p><div class="tags"><span>Частные дома</span><span>Общественные пространства</span></div></div></details>
+        <details class="service"><summary><span class="service-number">02</span><h3>Дизайн интерьера</h3><span class="service-plus" aria-hidden="true"></span></summary><div class="service-body"><p>Создаём интерьеры с характером. Планируем сценарии жизни, подбираем материалы, свет и мебель, собирая всё в единую историю.</p><div class="tags"><span>Жилые интерьеры</span><span>Бизнес-пространства</span></div></div></details>
+        <details class="service"><summary><span class="service-number">03</span><h3>Ландшафт</h3><span class="service-plus" aria-hidden="true"></span></summary><div class="service-body"><p>Продолжаем архитектуру за порогом дома. Места для отдыха, естественное озеленение и маршруты, которые хочется исследовать.</p><div class="tags"><span>Частные сады</span><span>Террасы и дворики</span></div></div></details>
+        <details class="service"><summary><span class="service-number">04</span><h3>Сопровождение</h3><span class="service-plus" aria-hidden="true"></span></summary><div class="service-body"><p>Помогаем воплотить замысел точно. Координируем решения, проверяем детали и поддерживаем связь с командой на каждом этапе.</p><div class="tags"><span>Авторский надзор</span><span>Комплектация</span></div></div></details>
+      </div>
+    </section>
+
+    <section class="process section-pad section-space" id="process" aria-labelledby="process-heading"><div class="section-top reveal"><div><div class="section-kicker">04 / КАК МЫ РАБОТАЕМ</div><h2 id="process-heading">Большой результат.<br>Понятный путь.</h2></div><p class="section-aside">Прозрачно на каждом шаге.<br>Без потерянных идей и случайных решений.</p></div><div class="process-grid"><article class="process-step reveal"><span class="step-number">01<span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><h3>Знакомимся</h3><p>Слушаем, задаём вопросы и разбираемся, что для вас действительно важно.</p><span class="step-label">БРИФ И ЗАДАЧА</span></article><article class="process-step reveal"><span class="step-number">02<span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><h3>Находим идею</h3><p>Переводим ваши пожелания в концепцию: настроение, форму и первые образы.</p><span class="step-label">КОНЦЕПЦИЯ И ЭСКИЗЫ</span></article><article class="process-step reveal"><span class="step-number">03<span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><h3>Продумываем</h3><p>Прорабатываем планировки, материалы и чертежи. Ничего не оставляем случаю.</p><span class="step-label">ДЕТАЛИ И ДОКУМЕНТАЦИЯ</span></article><article class="process-step reveal"><span class="step-number">04<span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></span><h3>Воплощаем</h3><p>Помогаем сохранить идею при реализации — до момента, когда вы скажете «я дома».</p><span class="step-label">РЕАЛИЗАЦИЯ И ПОДДЕРЖКА</span></article></div></section>
+
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-heading"><div class="contact-copy reveal"><div class="section-kicker"><span class="status-dot"></span> НАЧНЁМ С РАЗГОВОРА</div><h2 id="contact-heading">У каждого места<br>есть будущее.<br><span class="serif-word">Создадим ваше?</span></h2><p>Расскажите, о каком пространстве вы мечтаете.<br>Большая идея начинается с нескольких слов.</p><div class="contact-bottom"><span>АЛМАТЫ, КАЗАХСТАН</span><span>ОТ ПЕРВОГО ЭСКИЗА — ДО ВАШЕГО ДОМА</span></div></div>
+      <form class="contact-form reveal" id="request-form"><h3>Ваш следующий шаг</h3><p class="form-intro">Пара деталей, чтобы начать знакомство.</p><div class="form-field"><label for="name">Как вас зовут <span aria-hidden="true">*</span></label><input id="name" name="name" placeholder="Ваше имя" autocomplete="name" required minlength="2" maxlength="80"></div><div class="form-field"><label for="email">Электронная почта <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required maxlength="254"></div><div class="form-field"><label for="service">Что вы планируете?</label><select id="service" name="service"><option value="">Выберите направление</option><option>Архитектура</option><option>Дизайн интерьера</option><option>Ландшафт</option><option>Сопровождение проекта</option><option>Пока ищу идею</option></select></div><div class="form-field"><label for="message">Немного о вашей идее</label><textarea id="message" name="message" rows="2" placeholder="Место, площадь, настроение — всё, что уже знаете" maxlength="2000"></textarea></div><label class="checkbox"><input type="checkbox" name="consent" required><span>Я понимаю, что это демо-форма: заявка будет сохранена в файл на моём устройстве.</span></label><button class="button submit-button" type="submit" disabled>Подготовить заявку <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button><noscript><p class="form-note">Включите JavaScript, чтобы подготовить и скачать заявку.</p></noscript><p class="form-note">Данные не отправляются на сервер и не сохраняются в браузере.</p><p class="form-status" id="form-status" role="status" aria-live="polite"></p><button class="download-again" id="download-again" type="button" hidden>Скачать заявку ещё раз ↓</button></form>
+    </section>
+  </main>
+
+  <footer class="footer section-pad"><div class="footer-top"><a class="logo" href="#top" aria-label="FORMA — наверх">f<span class="logo-o">o</span>rma<span class="registered">®</span></a><p>Продуманная форма.<br>Настоящая жизнь.</p><a class="back-top" href="#top">Наверх <span aria-hidden="true">↑</span></a></div><div class="footer-bottom"><span>© <span id="year">2026</span> FORMA. Концепция архитектурного бюро.</span><span>Компания и проекты вымышлены.</span><a href="https://github.com/Nurmukasan/Zamanbek-Exam" target="_blank" rel="noopener noreferrer">Код проекта <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div></footer>
+
+  <dialog id="project-dialog" class="project-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="Закрыть проект">×</button><img id="dialog-image" src="./assets/images/villa.webp" alt="" width="1536" height="1024"><div class="dialog-content"><div class="section-kicker" id="dialog-meta"></div><h2 id="dialog-title">Тихая резиденция</h2><p id="dialog-description"></p><a class="button" href="#contact" id="dialog-contact">Хочу похожий проект <span aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></a></div></dialog>
+</body>
+</html>
