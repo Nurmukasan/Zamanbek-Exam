@@ -23,6 +23,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set publishing source to GitHub Actions
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method PUT "repos/${GITHUB_REPOSITORY}/pages" -f build_type=workflow > /dev/null
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload static website
@@ -32,3 +36,9 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Check published website
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          curl --fail --silent --show-error --retry 6 --retry-all-errors --retry-delay 10 "$SITE_URL" --output /tmp/published.html
+          python3 -c 'from pathlib import Path; p=Path("/tmp/published.html").read_text(); assert "FORMA" in p and "request-form" in p, "Published page does not contain the expected website"'
